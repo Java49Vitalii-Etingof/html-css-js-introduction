@@ -8,22 +8,22 @@ font-size: 1.5em;
 
 }
 .details-image {
-
+width: 50em;
 }
 .details-title {
-display: block;
+display:block;font-size: 1.5em;
 }
 .thumbnails-list {
 list-style: none;
 }
 .thumbnails-item {
-
+display: block;
 }
 .thumbnails-image{
-
+width: 25em;height: 25em;
 }
 .thumbnails-title {
-
+display: block;font-size: 1.5em;
 }
 .thumbnails-anchor {
 

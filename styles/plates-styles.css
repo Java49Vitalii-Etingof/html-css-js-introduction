@@ -1,30 +1,31 @@
 .logo {
-    font-size: 1.5em;
-}
-.main-class {
-
-}
-.details-container {
-
-}
-.details-image {
-
-}
-.details-title {
-display: block;
-}
-.thumbnails-list {
-list-style: none;
-}
-.thumbnails-item {
-
-}
-.thumbnails-image{
-width: 2px;
-}
-.thumbnails-title {
-
-}
-.thumbnails-anchor {
-
-}
+    font-size: 1.5em;    
+    }
+    .main-class {
+    
+    }
+    .details-container {
+    
+    }
+    .details-image {
+    width: 50em;
+    }
+    .details-title {
+    display:block;font-size: 1.5em;
+    }
+    .thumbnails-list {
+    list-style: none;
+    }
+    .thumbnails-item {
+    display: block;
+    }
+    .thumbnails-image{
+    width: 25em;height: 25em;
+    }
+    .thumbnails-title {
+    display: block;font-size: 1.5em;
+    }
+    .thumbnails-anchor {
+    
+    }
+    
