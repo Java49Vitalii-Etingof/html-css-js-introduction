@@ -14,7 +14,7 @@ font-size: 1.5em;
 display: block;
 }
 .thumbnails-list {
-
+list-style: none;
 }
 .thumbnails-item {
 
