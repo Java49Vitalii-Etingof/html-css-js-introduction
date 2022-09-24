@@ -35,7 +35,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 10vh;
+    margin-top: 6vh;
     }
     .details-image {
     width: 80vw;
@@ -79,3 +79,20 @@ body{
     text-decoration: none;
     }
     
+    @media (min-width: 560px){
+     .thumbnails-list{
+        flex-direction: column;
+        flex-wrap: nowrap;
+        max-height: 80vh;
+        order: -1;
+        justify-content: flex-start;
+     } 
+     .main-class{
+        flex-direction: row;
+        justify-content: space-around;
+     }  
+     .details-image{
+        width: 40vh;
+        height: 30vh;
+     }
+    }
