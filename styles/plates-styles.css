@@ -35,7 +35,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 6vh;
+    margin-top: 5vh;
     }
     .details-image {
     width: 80vw;
@@ -83,9 +83,10 @@ body{
      .thumbnails-list{
         flex-direction: column;
         flex-wrap: nowrap;
-        max-height: 80vh;
+        max-height: 82vh;
         order: -1;
         justify-content: flex-start;
+        
     
      } 
      .main-class{
@@ -94,23 +95,26 @@ body{
      }  
      .details-image{
         width: 40vw;
-        height: 35vw;  
+        height: 35vw; 
+        margin-top: 5px;
+         
      }
      .details-container{
-      justify-content: center;  
+       
      }
      .thumbnails-item {
         max-width: 12vw;
-        min-height: 10vw;
+        min-height: 11vw;
+        margin-right: 10px;
      }
      .thumbnails-image{
         width: 12vw;
-        height: 7.5vw;
+        height: 8.5vw;
         }
         .thumbnails-title {
             
             height: 2.5vw;
           
     }
-    */
+    
 }
