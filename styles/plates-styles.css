@@ -128,16 +128,18 @@ body {
     .thumbnails-list {
         margin-top: 5vh;
         width: 15vw;
+
     }
 
     .details-container {
         justify-content: center;
-        margin-top: 10vh;
+        margin-top: 0vh;
     }
 
     .details-image {
-        width: 60vw;
-        height: 50vw;
+        width: 40vw;
+        height: 30vw;
+        margin-right: 7vw;
     }
 
     .details-title {
