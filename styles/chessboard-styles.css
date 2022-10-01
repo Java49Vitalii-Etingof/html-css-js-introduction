@@ -63,19 +63,8 @@ html {
     }
 
     .chessboard {
-        max-width: calc(var(--cell-height) * 8);
-        margin-bottom: 2px;
+        margin-bottom: 5vh;
         margin-left: 1px;
-    }
-
-    .white-cell {
-        width: var(--cell-height);
-        height: var(--cell-height);
-    }
-
-    .black-cell {
-        width: var(--cell-height);
-        height: var(--cell-height);
     }
 
 }
@@ -83,6 +72,6 @@ html {
 @media (min-width: 900px) {
     .chessboard {
         margin-left: 0.3px;
-        margin-bottom: 0.5px;
+       margin-bottom: 0vh;
     }
 }
