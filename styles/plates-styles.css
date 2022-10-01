@@ -4,10 +4,19 @@
     src: url("fonts/LAKESHOR-webfont.woff");
 }
 
+@font-face{
+    font-family: airstream;
+    src: url("fonts/Airstream-webfont.svg");
+    src: url("fonts/Airstream-webfont.woff");
+}
+
 :root {
     --thumbnails-img-width: 20vw;
     --thumbnails-img-height: 15vw;
     --thumbnails-title-height: calc(var(--thumbnails-img-height)*0.33);
+}
+body,html{
+    height: 100%;
 }
 
 body {
@@ -24,6 +33,8 @@ body {
     text-align: center;
     font-family: lakeshore;
     text-transform: uppercase;
+    letter-spacing: 5px;
+
 }
 
 .main-class {
@@ -37,17 +48,24 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 5vh;
+    margin-bottom: 10vh;
+    position: relative;
 }
 
 .details-image {
-    width: 80vw;
+    width: 90vw;
     height: 70vw;
     border-radius: 25%;
 }
 
 .details-title {
     display: block;
+    font-family: airstream;
+    font-style: italic;
+    background-color: beige;
+    position: absolute;
+    left: 3vw;
+    bottom: 2vw;
 }
 
 .thumbnails-list {
@@ -71,7 +89,7 @@ body {
 }
 
 .thumbnails-image {
-    display: flex;
+    display: block;
     width: var(--thumbnails-img-width);
     height: var(--thumbnails-img-height);
 }
@@ -88,10 +106,15 @@ body {
 }
 
 @media (min-width: 560px) {
+    :root{
+        --thumbnails-img-width: 12vw;
+        --thumbnails-img-height: 8vw;
+        --thumbnails-title-height: calc(var(--thumbnails-img-height)*0.25)   
+    }
     .thumbnails-list {
         flex-direction: column;
         flex-wrap: nowrap;
-        max-height: 82vh;
+        max-height: 75vh;
         order: -1;
         justify-content: flex-start;
     }
@@ -103,51 +126,41 @@ body {
 
     .details-image {
         width: 40vw;
-        height: 35vw;
-        margin-top: 5px;
-    }
+        height: 38vw;
 
-    .thumbnails-item {
-        max-width: 12vw;
-        min-height: 11vw;
-        margin-right: 10px;
     }
-
-    .thumbnails-image {
-        width: 12vw;
-        height: 8.5vw;
-    }
-
-    .thumbnails-title {
-        height: 2.5vw;
+    .details-container{
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0;
     }
 
 }
 
 @media (min-width: 900px) {
     .thumbnails-list {
-        margin-top: 5vh;
-        width: 15vw;
-
+        padding-right: 2vw;
+        margin-top: 2.5vh;
+        max-height: 86vh;
     }
 
     .details-container {
-        justify-content: center;
-        margin-top: 0vh;
+        margin-top: 5vh;
+        margin-right: 5vw;
     }
 
-    .details-image {
-        width: 40vw;
-        height: 30vw;
-        margin-right: 7vw;
+    .thumbnails-title {
+        font-size: 1.5em;
     }
 
     .details-title {
-        font-size: 2em;
+        font-size: 1.5em;
+        bottom: 9vw;
     }
 
-    .thumbnails-item {
-        border: solid 2px black;
-        margin-left: 6px;
+    .details-image {
+        width: 45vw;
+        height: 35vw;
     }
+       
 }
