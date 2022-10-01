@@ -104,10 +104,6 @@ body {
 .thumbnails-anchor {
     text-decoration: none;
 }
-.thumbnails-item:hover{
-    transform: scale(1.1);
-    margin-left: 1vw;
-}
 
 @media (min-width: 560px) {
     :root{
