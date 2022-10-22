@@ -14,10 +14,10 @@ for(let i = 0; i < anchors.length; i++) {
         showDetails();
         setDetails(anchors[i]);
     })
+}
     function showDetails() {
         mainClass.classList.remove(HIDDEN);
     }
     function hideDetails() {
         mainClass.classList.add(HIDDEN);
     }
-}
