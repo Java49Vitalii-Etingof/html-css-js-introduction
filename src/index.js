@@ -1,6 +1,7 @@
 console.log("Launching script");
 const anchors = document.querySelectorAll(".thumbnails-anchor");
 const detailsImage = document.querySelector(".details-image");
+const detailsSound = document.querySelector(".details-sound");
 const detailsTitle = document.querySelector(".details-title");
 const mainClass = document.querySelector(".main-class");
 const detailsContainer = document.querySelector(".details-container");
@@ -8,6 +9,7 @@ const HIDDEN = "hidden";
 const IS_POINT = "is-point";
 function setDetails(anchor) {
     detailsImage.setAttribute('src', anchor.getAttribute('data-details-image'));
+    detailsSound.setAttribute('src', anchor.getAttribute('data-details-sound'));
     detailsTitle.innerHTML = anchor.getAttribute('data-details-title');
 }
 for(let i = 0; i < anchors.length; i++) {
