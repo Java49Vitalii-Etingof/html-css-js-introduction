@@ -1,7 +1,7 @@
 console.log("Launching script");
 const anchors = document.querySelectorAll(".thumbnails-anchor");
 const detailsImage = document.querySelector(".details-image");
-const detailsSound = document.querySelector(".details-sound");
+const detailsAudio = document.querySelector(".details-audio");
 const detailsTitle = document.querySelector(".details-title");
 const mainClass = document.querySelector(".main-class");
 const detailsContainer = document.querySelector(".details-container");
