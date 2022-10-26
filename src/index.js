@@ -10,7 +10,7 @@ const IS_POINT = "is-point";
 
 function setDetails(anchor) {
     detailsImage.setAttribute('src', anchor.getAttribute('data-details-image'));
-    pauseAudio(1);
+    pause(1);
     audio.setAttribute("src", anchor.getAttribute('data-details-audio'));
     detailsTitle.innerHTML = anchor.getAttribute('data-details-title');
 }
@@ -30,21 +30,21 @@ function showDetails() {
         detailsContainer.classList.remove(IS_POINT);
     }, 1);
 
-    playAudio();
-    pauseAudio(5000);
+    play();
+    pause(5000);
 }
 function hideDetails() {
     mainClass.classList.add(HIDDEN);
     pauseAudio(1);
 }
 
-function playAudio() {
+function play() {
     setTimeout(function () {
         audio.play();
     }, 1);
 }
 
-function pauseAudio(msec) {
+function pause(msec) {
     setTimeout(function () {
         audio.pause();
     }, msec);
