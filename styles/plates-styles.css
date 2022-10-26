@@ -45,10 +45,11 @@ body {
     justify-content: center;
     flex-grow: 1;
 }
+
 .main-class.hidden {
     --thumbnails-img-width: 35vw;
     --thumbnails-img-height: 25vw;
-    --thumbnails-title-height: calc(var(--thumbnails-img-height)* 0.33)    
+    --thumbnails-title-height: calc(var(--thumbnails-img-height)* 0.33)
 }
 
 .details-container {
@@ -57,8 +58,9 @@ body {
     align-items: center;
     margin-bottom: 10vh;
     transition: 5s cubic-bezier(0.1, 2, 0.9, 1);
-    
+
 }
+
 .hidden .details-container {
     display: none;
 }
@@ -66,6 +68,7 @@ body {
 .details-frame {
     position: relative;
 }
+
 .hide-button {
     position: absolute;
     top: 2vh;
@@ -99,9 +102,10 @@ body {
     justify-content: space-around;
     padding-left: 0;
 }
+
 .hidden .thumbnails-list {
     max-height: 80vh;
-    margin-bottom: 5vh; 
+    margin-bottom: 5vh;
 }
 
 
@@ -127,8 +131,9 @@ body {
     background-color: beige;
     font-size: 0.9em;
 }
+
 .hidden .thumbnails-title {
-font-size: 1.4em;
+    font-size: 1.4em;
 }
 
 .thumbnails-anchor {
@@ -139,6 +144,7 @@ font-size: 1.4em;
     transform: scale(1.1);
     margin-left: 1vw;
 }
+
 .is-point {
     transform: scale(0.001);
     transition: 0s;
@@ -160,8 +166,9 @@ font-size: 1.4em;
         padding-right: 2vw;
         margin-top: 5.7vh;
     }
+
     .hidden .thumbnails-list {
-        
+
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-around;
@@ -172,10 +179,11 @@ font-size: 1.4em;
         flex-direction: row;
         justify-content: space-around;
     }
+
     .main-class.hidden {
         --thumbnails-img-width: 25vw;
         --thumbnails-img-height: 18vw;
-         
+
     }
 
     .details-image {
@@ -199,6 +207,7 @@ font-size: 1.4em;
     .thumbnails-title {
         font-size: 0.8em;
     }
+
     .hidden .thumbnails-title {
         font-size: 1.9em;
     }
@@ -210,6 +219,7 @@ font-size: 1.4em;
         margin-top: 7.4vh;
         max-height: 78vh;
     }
+
     .hidden .thumbnails-list {
         margin-top: 6vh;
     }
@@ -222,6 +232,7 @@ font-size: 1.4em;
     .thumbnails-title {
         font-size: 1.1em;
     }
+
     .hidden .thumbnails-title {
         font-size: 2.7em;
     }
