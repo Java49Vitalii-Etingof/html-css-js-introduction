@@ -1,10 +1,11 @@
-console.log("SUM OF DIGITS");
+/*console.log("SUM OF DIGITS");
 function sumDigits(number) {
     if (isNaN(number)) {
         return 'NAN'
     }
     if (number < 0) {
         number = -number;
+        // number = Math.abs(number);
     }
     let sum = 0;
     do {
@@ -18,3 +19,4 @@ console.log('SUM =', sumDigits(368945));
 console.log('SUM =', sumDigits(-368456));
 console.log('SUM =', sumDigits(0));
 console.log('SUM =', sumDigits('Word'));
+*/
