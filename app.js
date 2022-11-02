@@ -129,9 +129,17 @@
 
 console.log('function fromNumberToString(number, base)');
 function fromNumberToString(number, base) {
+    if(typeof base != 'number' || base<2 || base>36) {
+        return 'base is not valid';
+    }
+    if (isNaN(number)) {
+                 return 'number is not valid'
+            }
+    
 let result = "";
 let modNum = Math.abs(number);
-do {
+do {     
+    //do the conversion according to the ascii table
     let rem = modNum % base;
     if(rem > 9) {
         rem = String.fromCharCode(87+rem);
@@ -142,4 +150,10 @@ do {
 return number < 0 ? ('-' + result): result;
 
 }
-console.log(fromNumberToString(16,16));
+console.log(fromNumberToString(900550, 36));
+console.log(fromNumberToString(46016237, 36));
+console.log(fromNumberToString(-65656, 16));
+console.log(fromNumberToString(11483, 2));
+console.log(fromNumberToString(456888, 37));
+console.log(fromNumberToString('Word', 36));
+

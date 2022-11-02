@@ -16,3 +16,4 @@ function fromStringToNumber(string, base) {
  return result;
 }
 console.log(fromStringToNumber('java', 36));
+console.log(fromStringToNumber('react', 36));
