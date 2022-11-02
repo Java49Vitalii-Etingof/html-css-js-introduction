@@ -9,8 +9,8 @@ function fromStringToNumber(string, base) {
         code -= 87;
     } else {
         return 'error';
-    }
-    let n = string.length -i - 1;
+    }//abc(x) = (a*(x**2) + b*(x**1) + c*(x**0))/10 Binary to decimal conversion example
+    let n = string.length -(i + 1);
     result = result + code * (base**n);
  } 
  return result;
