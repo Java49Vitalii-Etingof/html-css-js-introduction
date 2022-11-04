@@ -33,27 +33,41 @@ function checkTeudatZehut(NumberStr) {
         console.log('NumberTeudatZehut', false);
 return false;
     }
-let teudatStrNumber = '341163004';
-let arStr = Array.from(teudatStrNumber);
-console.log(arStr);
+     let array = Array.from(NumberStr).map(function(symbol, index) {
+        let value = symbol.charCodeAt() - char0;
+        if(index % 2 == 0) {
+            return value;
+        }
+            else if(value * 2 < 10) {
+                return value * 2;
+            }
+            else return value%10 + Math.trunc(value/10)
+            })
+}
+console.log(NumberStr);
+checkTeudatZehut('341163004');
 
- let ar1Str = arStr.map(function(symbol, index) {
-    return index % 2 == 0 ? symbol : symbol * 2;
- })
- let res = 0
- console.log(ar1Str);
- let ar2Str = ar1Str.reduce(function(res, cur) {
-    return res + cur.symbol();
-     }, 0)
-     console.log(sumSymbol);
+// let teudatStrNumber = '341163004';
+// let arStr = Array.from(teudatStrNumber);
+// console.log(arStr);
 
+//  let ar1Str = arStr.map(function(symbol, index) {
+//     return index % 2 == 0 ? symbol : symbol * 2;
+//  })
+//  let res = 0
+//  console.log(ar1Str);
+//  let ar2Str = ar1Str.reduce(function(res, cur) {
+//     return res + cur.symbol();
+//      }, 0)
+//      console.log(sumSymbol);
+// }
 
     //TODO
     //control sum of for even index digit value, for odd index digit * 2
     //control sum should be divide on 10 with no remainder
     //example 123456782 => 1 + 4 +3 + 8 +5 + 3 + 7 + 7 + 2 => true
     //    123456783 => 1 + 4 +3 + 8 +5 + 3 + 7 + 7 + 3 => false
- }
+ 
 // function generateRandomTeudatZehut() {
     //TODO
     //returns string of 9 symbols matching checkTeudatZehut
