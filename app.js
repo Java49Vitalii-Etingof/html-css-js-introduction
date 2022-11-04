@@ -45,10 +45,11 @@ return false;
             else return (value*2)%10 + Math.trunc((value*2)/10)
             })
             console.log(array);
+
 }
 
 
-checkTeudatZehut('34619977');
+checkTeudatZehut('346199771');
 
 // let teudatStrNumber = '341163004';
 // let arStr = Array.from(teudatStrNumber);
