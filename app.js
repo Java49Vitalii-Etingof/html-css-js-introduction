@@ -45,11 +45,22 @@ return false;
             else return (value*2)%10 + Math.trunc((value*2)/10)
             })
             console.log(array);
+            let ctrlSum = 0;
+       ctrlSum =  array.reduce(function(sum, cur) {
+        return sum + cur;
+        
+       }, 0)
+       console.log(ctrlSum);
+       if(ctrlSum % 10 == 0)
+       console.log('NumberTeudatZehut ', true);
+       else console.log('NumberTeudatZehut', false);
 
-}
+       }    
+
+    
 
 
-checkTeudatZehut('346199771');
+checkTeudatZehut('34116302');
 
 // let teudatStrNumber = '341163004';
 // let arStr = Array.from(teudatStrNumber);
