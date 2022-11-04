@@ -28,7 +28,11 @@
 // return res + cur;
 // }, ""))
 
-//  function checkTeudatZehut(StrNumber) {
+function checkTeudatZehut(NumberStr) {
+    if(NumberStr.length != 9) {
+        console.log('NumberTeudatZehut', false);
+return false;
+    }
 let teudatStrNumber = '341163004';
 let arStr = Array.from(teudatStrNumber);
 console.log(arStr);
@@ -49,7 +53,7 @@ console.log(arStr);
     //control sum should be divide on 10 with no remainder
     //example 123456782 => 1 + 4 +3 + 8 +5 + 3 + 7 + 7 + 2 => true
     //    123456783 => 1 + 4 +3 + 8 +5 + 3 + 7 + 7 + 3 => false
-//  }
+ }
 // function generateRandomTeudatZehut() {
     //TODO
     //returns string of 9 symbols matching checkTeudatZehut
