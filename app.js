@@ -27,13 +27,14 @@
 // console.log(arStr.reduce(function(res, cur) {
 // return res + cur;
 // }, ""))
-
+const char0 = '0'.charCodeAt();
 function checkTeudatZehut(NumberStr) {
     if(NumberStr.length != 9) {
         console.log('NumberTeudatZehut', false);
 return false;
     }
-     let array = Array.from(NumberStr).map(function(symbol, index) {
+       
+       let array = Array.from(NumberStr).map(function(symbol, index) {
         let value = symbol.charCodeAt() - char0;
         if(index % 2 == 0) {
             return value;
@@ -41,11 +42,13 @@ return false;
             else if(value * 2 < 10) {
                 return value * 2;
             }
-            else return value%10 + Math.trunc(value/10)
+            else return (value*2)%10 + Math.trunc((value*2)/10)
             })
+            console.log(array);
 }
-console.log(NumberStr);
-checkTeudatZehut('341163004');
+
+
+checkTeudatZehut('34619977');
 
 // let teudatStrNumber = '341163004';
 // let arStr = Array.from(teudatStrNumber);
