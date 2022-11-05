@@ -30,10 +30,17 @@
 const char0 = '0'.charCodeAt();
 function checkTeudatZehut(NumberStr) {
     if(NumberStr.length != 9) {
-        console.log('NumberTeudatZehut', false);
-return false;
+        return false;
     }
-       
+        let ctrlSum = ControlSum(NumberStr);
+       if(ctrlSum % 10 == 0)
+       console.log('NumberTeudatZehut ', true);
+       else console.log('NumberTeudatZehut', false);
+       console.log(ctrlSum);
+    }
+
+    function ControlSum(NumberStr) {
+        
        let array = Array.from(NumberStr).map(function(symbol, index) {
         let value = symbol.charCodeAt() - char0;
         if(index % 2 == 0) {
@@ -50,18 +57,17 @@ return false;
         return sum + cur;
         
        }, 0)
-       console.log(ctrlSum);
-       if(ctrlSum % 10 == 0)
-       console.log('NumberTeudatZehut ', true);
-       else console.log('NumberTeudatZehut', false);
-      
+       return ctrlSum;
+    }
 
-       }    
+        
       
     
 
 
 checkTeudatZehut('341163020');
+
+
 
 //  let i = 0;
 //   do {
