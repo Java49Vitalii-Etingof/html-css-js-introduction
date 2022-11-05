@@ -30,3 +30,34 @@ function ControlSum(NumberStr) {
 checkTeudatZehut('341163020');
 checkTeudatZehut('34116302');
 
+
+const nineDigits = '012345678';
+const minDigit = 0;
+const maxDigit = 9;
+
+let array =  getGeneratedArray(); 
+     function getGeneratedArray() {
+    return Array.from(nineDigits).map(function(symbol, index) {
+        let value = (index==8) ? 0 : RandomIntegerValue(minDigit, maxDigit+1);
+        return value;
+    });
+}
+console.log(array);
+
+function RandomIntegerValue(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min); 
+}
+let NumberStr = integerArray2String(array);
+function integerArray2String(array) {
+    return array.reduce(function(str, cur) {
+        return str + String.fromCharCode(cur+char0);
+    }, "");
+}
+console.log(NumberStr);
+let ctrlSum = ControlSum(NumberStr);
+console.log(ctrlSum);
+
+
+
