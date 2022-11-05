@@ -54,13 +54,26 @@ return false;
        if(ctrlSum % 10 == 0)
        console.log('NumberTeudatZehut ', true);
        else console.log('NumberTeudatZehut', false);
+      
 
        }    
-
+      
     
 
 
-checkTeudatZehut('34116302');
+checkTeudatZehut('341163020');
+
+//  let i = 0;
+//   do {
+//    array[8] = i
+//    NumberStr = array.toString();
+//    checkTeudatZehut(NumberStr);
+//     i += 1; 
+//  } while(ctrlSum % 10 == 0);
+
+//  console.log(array);
+
+//  console.log(array); 
 
 // let teudatStrNumber = '341163004';
 // let arStr = Array.from(teudatStrNumber);
