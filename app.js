@@ -28,7 +28,7 @@ function ControlSum(NumberStr) {
 }
 
 checkTeudatZehut('341163020');
-checkTeudatZehut('341163027');
+checkTeudatZehut('321325649');
 
 
 const nineDigits = '012345678';
@@ -62,8 +62,8 @@ let ninth = 0
 if (ctrlSum % 10 == 0) {
    let res = 0;
 }
-    else ninth = (Math.floor(ctrlSum/10))*10 + 10 - ctrlSum;
-     res = (ninth & 2 == 0 )? ninth : (ninth - 1 + 10)/2;
+    else res = (Math.floor(ctrlSum/10))*10 + 10 - ctrlSum;
+    
 console.log('ninth character = ', res);
 
 
