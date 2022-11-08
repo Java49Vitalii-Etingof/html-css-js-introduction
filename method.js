@@ -10,6 +10,18 @@ function ulSurround(strings) {
 }
 console.log('Converted array =>', ulSurround(['hlk','shu','frt']));
 
+//************************************************* */
+
+
+function count(strings, symbol) {
+    return strings.reduce(function(count, value) {
+        return value === symbol ? count+1 : count;
+    }, 0);   
+}
+console.log('element match ', count(['dz', 'qt', 'ke', 'dz', 'qt'], 'dz'));
+console.log('element match ', count(['dz', 'qt', 'ke', 'dz', 'qt'], 'qt'));
+
+//**************************************************/
 
 
 
