@@ -54,15 +54,15 @@
 // // arrayCopy (src, 2, dst, 4, 2);
 // // console.log('converted array', dst);
 
-// function arrayCopy(src, srcPos, dst, dstPos, length) {
-//     let arForCopy = src.slice(srcPos, srcPos + length);
-//    dst.splice(dstPos, 0, ...arForCopy);
-// //     arForCopy.forEach((e, i) => dst.splice(dstPos + i, 0, e));
-//  }
-//  let ar1 = [1, 2, 3, 4, 5, 6];
-//  let ar2 = [10, 30, 40, 50];
-//  arrayCopy(ar1,2,ar2,1,3);
-//  console.log(`ar1: ${ar1}, ar2: ${ar2} arrayCopy(ar1,2,ar2,1,3): ${ar2}`);
+function arrayCopy(src, srcPos, dst, dstPos, length) {
+    let arForCopy = src.slice(srcPos, srcPos + length);
+   dst.splice(dstPos, 0, ...arForCopy);
+//     arForCopy.forEach((e, i) => dst.splice(dstPos + i, 0, e));
+ }
+ let ar1 = [1, 2, 3, 4, 5, 6];
+ let ar2 = [10, 30, 40, 50];
+ arrayCopy(ar1,2,ar2,1,3);
+ console.log(`ar1: ${ar1}, ar2: ${ar2} arrayCopy(ar1,2,ar2,1,3): ${ar2}`);
 
 
 //  //************************************************************* */
