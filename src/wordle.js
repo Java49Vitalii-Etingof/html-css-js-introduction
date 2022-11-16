@@ -1,8 +1,14 @@
-const word = "apple"
+const words = ['table', 'chair', 'apple', 'melon', 'guest', 'photo'];
+const gameResultField = document.querySelector('.game-result');
+const currentAttemptField =document.querySelector('.current-attempt');
+const letterElements = document.querySelectorAll(".letter-guess");
 const N_LETTERS = 5;
-const letterElements = document.querySelectorAll(".letter-guess")
+const N_ATTEMPTS = 6; 
+let currentAttempt = 0;
+
 function onChange(event) {
-    const wordGuess = event.target.value;
+    const wordGuess = event.target.value.toLowerCase();
+    currentAttemptField.innerHTML = 'Remaining attempts: ' + (N_ATTEMPTS -currentAttempt++ );
     event.target.value='';
     if (wordGuess.length != N_LETTERS) {
         alert(`A word should contain ${N_LETTERS} letters`)
@@ -21,4 +27,12 @@ function onChange(event) {
          letterElements[i].style.color=c)
     }
    
+}
+function getWord() {
+    return words[getRandomIntegerValue(0, words.length)];
+}
+function getRandomIntegerValue(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min); 
 }
