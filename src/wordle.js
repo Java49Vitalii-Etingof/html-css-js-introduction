@@ -1,7 +1,6 @@
 const words = ["pappyhhhhh", "beachf", "apple", "reactpp", "bas",
  "angerrrrrrr", "hell", "dress6666666"];
  let word;
-const N_LETTERS = 5;
 const sectionElement = document.querySelector(".word-guess")
 sectionElement.innerHTML = getDivsElements();
 const letterElements = document.querySelectorAll(".letter-guess");
@@ -14,8 +13,8 @@ const INITIAL_TRIALS = 6;
 let trials = INITIAL_TRIALS;
 function getDivsElements() {
     let index = Math.floor(Math.random() * words.length);
-   
     let wordField = words[index];
+    console.log(wordField);
     let wordFieldAr = Array.from(wordField);
     let res = wordFieldAr.map(letter => `<div class="letter-guess">${letter}</div>`);
     return res.join('');
@@ -40,22 +39,22 @@ function onChange(event) {
     trials--;
     showTrialsMessage(trials);
      
-    if (wordGuess.length != N_LETTERS) {
-        alert(`A word should contain ${N_LETTERS} letters`)
-    } else {
+    // if (wordGuess.length != N_LETTERS) {
+    //     alert(`A word should contain ${N_LETTERS} letters`)
+    // } else {
         const wordAr = Array.from(wordGuess);
-        wordAr.forEach((l, i) => letterElements[i].innerHTML = l);
-        const colors = wordAr.map((letter, i) => {
-            let index = word.indexOf(letter);
-            let res = 'red';
-            if (index  > -1) {
-                res = letter == word[i] ? 'green' : 'yellow'
-            }
-            return res;
-        })
-        colors.forEach((c, i) =>
-         letterElements[i].style.color=c)
-    }
+    //     wordAr.forEach((l, i) => letterElements[i].innerHTML = l);
+    //     const colors = wordAr.map((letter, i) => {
+    //         let index = word.indexOf(letter);
+    //         let res = 'red';
+    //         if (index  > -1) {
+    //             res = letter == word[i] ? 'green' : 'yellow'
+    //         }
+    //         return res;
+    //     })
+    //     colors.forEach((c, i) =>
+    //      letterElements[i].style.color=c)
+    // // }
     const res = wordGuess == word;
     if (trials == 0 || res) {
         endGame(res);
