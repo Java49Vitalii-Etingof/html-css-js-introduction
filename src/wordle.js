@@ -14,11 +14,10 @@ let wordFieldArLen = 0;
 const sectionElement = document.querySelector(".word-guess");
 sectionElement.innerHTML = getDivsElements();
 const letterElements = document.querySelectorAll(".letter-fromWord");
-const trialNumberElement = document.querySelector(".trial-number");
-const wordTrialsElement = document.querySelector(".word-trial");
+const trialsElement = document.querySelector(".guess-trials");
 const gameOverElement = document.querySelector(".game-over-message");
 const invitationElement = document.querySelector(".guess-invitation");
-//const playAgainElement = document.getElementById("play-again");
+const playAgainElement = document.getElementById("play-again");
 
 let flGameOver = false;
 let trials = 0;
@@ -42,8 +41,8 @@ function getIndex() {
 }
 
 function showTrialMessage(trials, word) {    
-    trialNumberElement.innerHTML = `You have done ${trials} guess trials`;  
-    wordTrialsElement.innerHTML = `Your word is ${word}`;
+    trialsElement.innerHTML = `You have done ${trials} guess trials! Your word is ${word}`;  
+    // wordTrialsElement.innerHTML = `Your word is ${word}`;
 }
 
 function startGame() {
@@ -74,7 +73,7 @@ function onChange(event) {
         if(color === 'white') {
             if(letterElements[index].style.background !== 'white') {
                 wordFieldArLen++;
-                letterElements[index].style.background=color;
+                letterElements[index].style.background = color;
             }
         }
     });
@@ -90,13 +89,11 @@ function endGame(isSuccess) {
         invitationElement.innerHTML = '';
     }
    
-//    playAgainElement.style.display='block';
-    trialNumberElement.innerHTML = '';
-    wordTrialsElement.innerHTML = '';
-    flGameOver = true;
-/*
+playAgainElement.style.display='block';
+trialsElement.innerHTML = '';
+flGameOver = true;
     index = 0;
     prevInd = -1;
-    */
+    
 }
 startGame();
