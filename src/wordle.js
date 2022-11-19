@@ -7,7 +7,7 @@ const words = [
     ['furniture', 'chair']];
 
 let word;
-let index = 0;
+let index = 0 ;
 let prevInd = -1;
 let wordFieldAr = [];
 let wordFieldArLen = 0;
@@ -34,9 +34,9 @@ function getDivsElements() {
 function getIndex() {
     index = Math.floor(Math.random() * words.length); 
     while(index == prevInd) {
-        index = Math.floor(Math.random() * words.length);  
+       index = Math.floor(Math.random() * words.length);  
     }
-    prevInd = index;
+   prevInd = index;
     return index;
 }
 
@@ -48,6 +48,7 @@ function showTrialMessage(trials, word) {
 function startGame() {
     if(flGameOver) {
         sectionElement.innerHTML = getDivsElements();
+      
         flGameOver = false;
     }
     trials = 0;
@@ -71,10 +72,11 @@ function onChange(event) {
     })
     colors.forEach((color, index) => {
         if(color === 'white') {
-            if(letterElements[index].style.background !== 'white') {
-                wordFieldArLen++;
+            if(letterElements[index].style.background !== 'white') 
+            {
+               wordFieldArLen++;
                 letterElements[index].style.background = color;
-            }
+           }
         }
     });
     if(wordFieldArLen === wordFieldAr.length) {
@@ -83,7 +85,7 @@ function onChange(event) {
 }
 function endGame(isSuccess) {
     if (isSuccess) {
-        gameOverElement.innerHTML =  `Congratulations you are winner, the game is over.
+        gameOverElement.innerHTML =  `Congratulations you are winner! the game is over.
         Amount of trials is ${trials}`;
         gameOverElement.style.color = "green"
         invitationElement.innerHTML = '';
