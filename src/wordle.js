@@ -48,7 +48,7 @@ function showTrialMessage(trials, word) {
 function startGame() {
     if(flGameOver) {
         sectionElement.innerHTML = getDivsElements();
-      
+        letterElements = document.querySelectorAll(".letter-fromWord");
         flGameOver = false;
     }
     trials = 0;
