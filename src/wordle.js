@@ -13,7 +13,7 @@ let wordFieldAr = [];
 let wordFieldArLen = 0;
 const sectionElement = document.querySelector(".word-guess");
 sectionElement.innerHTML = getDivsElements();
-const letterElements = document.querySelectorAll(".letter-fromWord");
+let letterElements = document.querySelectorAll(".letter-fromWord");
 const trialsElement = document.querySelector(".guess-trials");
 const gameOverElement = document.querySelector(".game-over-message");
 const invitationElement = document.querySelector(".guess-invitation");
@@ -71,12 +71,9 @@ function onChange(event) {
         return wordAr.includes(l) ? 'white' : 'black';
     })
     colors.forEach((color, index) => {
-        if(color === 'white') {
-            if(letterElements[index].style.background !== 'white') 
-            {
+        if(color === 'white') {    
                wordFieldArLen++;
-                letterElements[index].style.background = color;
-           }
+                letterElements[index].style.background = color;   
         }
     });
     if(wordFieldArLen === wordFieldAr.length) {
