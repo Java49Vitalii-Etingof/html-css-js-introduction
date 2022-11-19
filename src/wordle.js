@@ -1,5 +1,3 @@
-cconst worsd = ['pappy', 'apple', 'photo', 'java', 'chair'];
-const presentations = ['close relative', 'fruit', 'picture', 'programming language', 'furniture']
 
 const words = [
     ['close relative', 'pappy'],
