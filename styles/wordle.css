@@ -7,7 +7,7 @@ body {
     display: flex;
     flex-direction: row;
 }
-.letter-fromWord {
+.letter-guess {
     font-size: 1.5em;
     margin-left: 2vw;
     background-color: black;
