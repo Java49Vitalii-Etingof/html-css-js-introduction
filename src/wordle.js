@@ -9,11 +9,11 @@ const words = [
 let word;
 let index = 0;
 let prevInd = -1;
-let searchWordArr = [];
+let wordFieldAr = [];
+let wordFieldArLen = 0;
 const sectionElement = document.querySelector(".word-guess");
-let searchWordArrLen=0;
 sectionElement.innerHTML = getDivsElements();
-const letterElements = document.querySelectorAll(".letter-guess");
+const letterElements = document.querySelectorAll(".letter-fromWord");
 const trialNumberElement = document.querySelector(".trial-number");
 const wordTrialsElement = document.querySelector(".word-trial");
 const gameOverElement = document.querySelector(".game-over-message");
@@ -27,8 +27,8 @@ function getDivsElements() {
     index = getIndex();
     console.log('word=', words[index][1]);
     word = words[index][1];
-    searchWordArr = Array.from(word);
-    let res = searchWordArr.map(letter => `<div class="letter-guess">${letter}</div>`);
+    wordFieldAr = Array.from(word);
+    let res = wordFieldAr.map(letter => `<div class="letter-fromWord">${letter}</div>`);
     return res.join('');
 }
 
@@ -52,7 +52,7 @@ function startGame() {
         flGameOver = false;
     }
     trials = 0;
-    searchWordArrLen = 0;
+    wordFieldArLen = 0;
     flGameOver = false;
     gameOverElement.innerHTML =  "";
     invitationElement.innerHTML = `Guess the word as "${words[index][0]}"`;
@@ -67,18 +67,18 @@ function onChange(event) {
     trials++;
     showTrialMessage(trials, wordGuess);
     const wordAr = Array.from(wordGuess);
-    let colors = searchWordArr.map((l) => {
+    let colors = wordFieldAr.map((l) => {
         return wordAr.includes(l) ? 'white' : 'black';
     })
     colors.forEach((color, index) => {
         if(color === 'white') {
             if(letterElements[index].style.background !== 'white') {
-                searchWordArrLen++;
+                wordFieldArLen++;
                 letterElements[index].style.background=color;
             }
         }
     });
-    if(searchWordArrLen === searchWordArr.length) {
+    if(wordFieldArLen === wordFieldAr.length) {
         endGame(true);
     }
 }
