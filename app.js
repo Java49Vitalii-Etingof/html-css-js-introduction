@@ -39,14 +39,14 @@
 //const strings = ["a","opr","lmn", "abc", "lmn","abc", "lmn", "lmn", "abc", "a"];
 //displayOccurrences(strings);
 //********************************************************************************* */
-const string1 = 'yellow';
-const str1 = Array.from(string1);
-const string2 = 'yello';
-const str2 = Array.from(string2);
-console.log(str1);
-console.log(str2);
-function isAnagram()
-if(str1.length != str2.length){
+const str1 = 'yellow';
+const strings1 = Array.from(str1);
+const str2 = 'yellou';
+const strings2 = Array.from(str2);
+console.log(strings1);
+console.log(strings2);
+//function isAnagram()
+if(strings1.length != strings2.length){
    res = false
    console.log(res);
 }
@@ -63,4 +63,4 @@ function displayOccurrences(strings) {
       console.log(Object.entries(occurrences));
    }
    
-displayOccurrences(str1);
+displayOccurrences(strings1);
