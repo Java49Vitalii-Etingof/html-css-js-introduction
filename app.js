@@ -48,8 +48,8 @@ const str2 = 'yello';
 function isAnagram() {
 const strings1 = Array.from(str1);
 const strings2 = Array.from(str2);
-console.log(strings1);
-console.log(strings2);
+// console.log(strings1);
+// console.log(strings2);
 if(strings1.length != strings2.length){
  res = 'input parameters must be the same length';
  }
@@ -58,15 +58,23 @@ if(strings1.length != strings2.length){
  
    const Ar1  = displayOccurrences(strings1);  
    console.log(Ar1);
+   console.log(Ar1[0]);
+   let i = 0;
+   let ar = Ar1[i];
+   strings2.forEach(element,i) => {
+while (ar[0] != element;
+    
+   }
    
-   elementСomparison();
+   
+//    elementСomparison();
   
     return res;
 }
 //***************************************** */
-function elementСomparison(){
-   Ar1['i',''].forEach
-}
+// function elementСomparison(){
+//    Ar1['i',''].forEach
+// }
 function displayOccurrences(strings) {
    const occurrences = {};
    strings.forEach(element => {
@@ -80,7 +88,7 @@ function displayOccurrences(strings) {
 }
    
 res =  isAnagram(str1, str2) ;
- console.log(res);
+//  console.log(res);
 
 //************************************************* */
 // let guessedLetters = 0;
@@ -101,7 +109,7 @@ res =  isAnagram(str1, str2) ;
 
 // const mas3 = mas2.diff(mas1);
 // console.log(mas3); // ["some5"]
-const one = ['one', 'two', 'three', 'four']
-const two = ['two', 'three', 'four', 'five', 'six']
-const a = one.filter( el => two.indexOf( el ) > -1 ).length;
-console.log(a);
+// const one = ['one', 'two', 'three', 'four']
+// const two = ['two', 'three', 'four', 'five', 'six']
+// const a = one.filter( el => two.indexOf( el ) > -1 ).length;
+// console.log(a);
