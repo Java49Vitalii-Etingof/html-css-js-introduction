@@ -41,32 +41,36 @@
 // const strings = ["a","opr","lmn", "abc", "lmn","abc", "lmn", "lmn", "abc", "a"];
 // displayOccurrences(strings);
 //************************isAnagram******************************************** */
-const str1 = 'yellow';
-const str2 = 'yello';
+const str1 = 'Yellow';
+const str2 = 'Yellow';
 //****************************************** 
 
-function isAnagram() {
-const strings1 = Array.from(str1);
-const strings2 = Array.from(str2);
-console.log(strings1);
-console.log(strings2);
-if(strings1.length != strings2.length){
- res = 'input parameters must be the same length';
- }
+function isAnagram(str1,str2) {
+    if(str1.length != str2.length){
+        //res = 'input parameters must be the same length';
+        return false;
+    }
+let ar1 = Array.from(str1.toLowerCase());
+let ar2 = Array.from(str2.toLowerCase());
 
-
- 
-   const Ar1  = occurrences(strings1);  
-   console.log(Ar1);
-   
-   
-//    elementСomparison();
+let occurrences  = getOccurrences(ar1);  
+ console.log(occurrences);
+ for(let i=0; i<ar2.length; i++) {
+    if(occurrences[ar2[i]] == undefined) {
+     
+      return false;
+    }
+    if(--occurrences[ar2[i]] < 0) {
+     
+      return false;
+    }
+  }
   
-    return res;
+  return true;
 }
-//***************************************** */
 
-function occurrences(strings) {
+
+function getOccurrences(strings) {
    const occurrences = {};
    strings.forEach(element => {
        if (occurrences[element]) {
@@ -75,7 +79,7 @@ function occurrences(strings) {
            occurrences[element] = 1;
        }
    });
-   return Object.entries(occurrences);
+   return occurrences;
 }
    
 res =  isAnagram(str1, str2) ;
