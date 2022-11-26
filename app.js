@@ -11,6 +11,7 @@
     let salary = getRandomIntegerValue(minSalary, maxSalary);
     employees.push(createEmployee(id, name, birthYear, salary));
   }
+    
    return employees;
  }
 
@@ -30,7 +31,7 @@
 function createEmployee(id, name, birthYear, salary) {
   return {id, name, birthYear, salary};
 }
-let res = createRandomEmployees( 8, 3, 10000, 20000, 1955, 2002);
+let res = createRandomEmployees( 8, 4, 1955, 2002, 10000, 20000, );
 console.log(res);
 
 
