@@ -1,10 +1,11 @@
  function createRandomEmployees(nEmployees, idDigits, minBirthYear, maxBirthYear , minSalary, maxSalary ){
  
   let employees = [];
+  let arId = [0];
   minId = Math.pow(10, idDigits-1);
   maxId = Math.pow(10, idDigits);
   for(let i = 0; i < nEmployees; i++){
-    let id = getRandomIntegerValue(minId, maxId);
+    let id = getRandomID(minId, maxId, arId);
     let name = 'name'+ id;
     let birthYear = getRandomIntegerValue(minBirthYear, maxBirthYear);
     let salary = getRandomIntegerValue(minSalary, maxSalary);
@@ -12,6 +13,15 @@
   }
    return employees;
  }
+
+ function getRandomID(min, max, arId){
+  let id = arId[0];
+  do {
+      id = getRandomIntegerValue(min, max);
+  } while (arId.includes(id))
+  arId.push(id);
+  return id;
+}
  function getRandomIntegerValue(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -23,9 +33,6 @@ function createEmployee(id, name, birthYear, salary) {
 let res = createRandomEmployees( 8, 3, 10000, 20000, 1955, 2002);
 console.log(res);
 
-// function getRandomId(min, max){
-//   id = getRandomIntegerValue(min, max)
-//   return id;
-// }
+
  
 
