@@ -7,6 +7,7 @@ const httpPrefix = "https://image.tmdb.org/t/p/w500";
 // console.log(jsonObj1);
 const moviesData = JSON.parse(jsonData);
 // console.log(httpPrefix + moviesData.results[2].poster_path);
+//console.log(httpPrefix + moviesData.results[0].original_title);
 const ulElement = document.querySelector(".movies-list");
 const sectionElements = document.querySelectorAll("section");
 ulElement.innerHTML = getPosterImages();
