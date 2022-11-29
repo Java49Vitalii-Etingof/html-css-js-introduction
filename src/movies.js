@@ -12,9 +12,9 @@ const ulElement = document.querySelector(".movies-list");
 const sectionElements = document.querySelectorAll("section");
 ulElement.innerHTML = getPosterImages();
 function getPosterImages() {
-   const arImages = moviesData.results.map(movie => 
-     //   `<li class="movie-item"> <img class="movie-image" src="${httpPrefix}${movie.poster_path}"></li>`);
-     `<li class="movie-item"> <img class="movie-image" src="${httpPrefix}${movie.original_title}"></li>`);
+    const arImages = moviesData.results.map(movie => 
+        //   `<li class="movie-item"> <img class="movie-image" src="${httpPrefix}${movie.poster_path}"></li>`);
+        `<li class="movie-item"> <img class="movie-image" src="${httpPrefix}${movie.original_title}"></li>`);
      
     return arImages.join('');
 }
