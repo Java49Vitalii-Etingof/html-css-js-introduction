@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/movies.css">
-    
+
     <title>Movies</title>
 </head>
+
 <body>
-    <button onclick="show(0)">Show All Movies</button>
-    <button onclick="show(1)">Show Most Popular Movie</button>
-    <button onclick="show(2)">Show Least Popular Movie</button>
-    
-    <section hidden></section>
-    <div class="movies-list"></div>
-         
-    <section hidden>
-    <div class="movies-popularity"></div>
+    <div class="button">
+        <button onclick="show(0)">Show All Movies</button>
+        <button onclick="show(1)">Show Most Popular Movie</button>
+        <button onclick="show(2)">Show Least Popular Movie</button>
+    </div>
+    <main class="main-class">
+        <section hidden>
+            <div class="movies-list"></div>
+        </section>
 
-    </section>
-    <section hidden>
-    <div class="movies-least-popularity"></div>
+        <section hidden>
+            <div class="movies-popularity"></div>
 
-    </section>
-   
-    
+        </section>
+        <section hidden>
+            <div class="movies-least-popularity"></div>
+
+        </section>
+    </main>
+
     <script src="src/movies.js"></script>
 </body>
+
 </html>
