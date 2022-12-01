@@ -16,4 +16,7 @@ function onChange(event) {
             event.target.value=''
         }
     }
+    if (event.target.name == "birthDate") {
+        
+    }
 }
