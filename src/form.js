@@ -16,7 +16,9 @@ function onChange(event) {
             event.target.value=''
         }
     }
-    if (event.target.name == "birthDate") {
-        
-    }
+    // 
 }
+
+
+
+//Array.from(str1.toLowerCase());
