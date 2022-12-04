@@ -1,4 +1,6 @@
 const inputElements = document.querySelectorAll(".form-class [name]");
+const errorElement =document.querySelector(".error");
+// **********************************************************************
 function onSubmit(event) {
     event.preventDefault();
     console.log("submitted");
@@ -16,7 +18,7 @@ function onChange(event) {
             event.target.value=''
         }
     }
-    // 
+    
 }
 
 

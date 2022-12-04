@@ -23,3 +23,7 @@
     margin-top: 10vh;
     width: 40vw;
 }
+.error {
+    margin-top: 5vh;
+    background-color: red;
+}
