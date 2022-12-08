@@ -14,6 +14,35 @@
         <button onclick="showSection(2)" class="btn-menu">Author's books</button>
         <button onclick="showSection(3)" class="btn-menu">Books with number of pages in range</button>        
     </div>
+    <section id="add-book" hidden>
+        <header class="form-title">Book Form</header>
+        <form id="book_form" onsubmit="onsubmit(event)" class="form-class">
+        <div class="two-inputs">
+            <input type="text" name="book_title" placeholder="Enter book title" required>
+            <input type="text" name="author" placeholder="Enter book author" required>
+        </div>
+
+        <div class="two-inputs">
+            <select name="genre" required>
+                <option value hidden selected disabled>
+                    --Select Genre--
+                </option>
+                <option value="Fantasy">Fantasy</option>
+                <option value="Roman">Roman</option>
+                <option value="Detective">Detective</option>
+                <option value="Fairytale">Fairytale</option>
+                <option value="Adventure">Adventure</option>
+            </select>
+            <input type="number" name="NumberOfPages" placeholder="Enter number of pages" onchange="onChange(event)" required>   
+        </div>
+        
+        <div class="data-label">
+            <label>Enter publication date</label>
+            <input type="data" name="publishing_date" onchange="onChange(event)" required>
+        </div>
+        
+        </form>
+    </section>
     
 </body>
 </html>
