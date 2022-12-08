@@ -4,11 +4,10 @@ body,html {
 body {
     background-color: azure;
 }
-.buttons-meny {
+.buttons-menu {
     display: flex;
     justify-content: center;
 }
-.btn-meny+.btn-meny {
+.btn-menu+.btn-menu {
     margin-left: 10vw;
 }
-    
