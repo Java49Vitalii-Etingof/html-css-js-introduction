@@ -1,0 +1,14 @@
+body,html {
+    height: 100%;
+}
+body {
+    background-color: azure;
+}
+.buttons-meny {
+    display: flex;
+    justify-content: center;
+}
+.btn-meny+.btn-meny {
+    margin-left: 10vw;
+}
+    
