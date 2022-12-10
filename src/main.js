@@ -16,14 +16,18 @@ const publishingDateErrorElement = document.getElementById("publishingDate_error
 const booksListElement = document.getElementById("books-all");
 
 const libraryb = new Libraryb();
-class Libraryb {
-    constructor() {
-        this.books = []
-    }
-    getAllBooks() {
-        return this.books;
-    }
+function Libraryb() {
+    this.books = [];
 }
+Company.prototype.hirebook = function(book) {
+    this.books.push(book);
+}
+Company.prototype.getAllBooks = function(){
+    return this.books;
+}
+// Company.prototype.getEmployeesBySalary = function(salaryFrom, salaryTo) {
+//     //TODO
+// }
 function showSection(index) {
      buttonsMenuElement.forEach(e => e.classList.remove(ACTIVE));
     sectionsElement.forEach(e => e.hidden = true)
