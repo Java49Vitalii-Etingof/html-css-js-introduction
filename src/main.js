@@ -19,10 +19,10 @@ const libraryb = new Libraryb();
 function Libraryb() {
     this.books = [];
 }
-Company.prototype.hirebook = function(book) {
+Libraryb.prototype.hireBook = function(book) {
     this.books.push(book);
 }
-Company.prototype.getAllBooks = function(){
+Libraryb.prototype.getAllBooks = function(){
     return this.books;
 }
 // Company.prototype.getEmployeesBySalary = function(salaryFrom, salaryTo) {
@@ -64,7 +64,7 @@ function onSubmit(event) {
         }, {}
     )
     console.log(book)
-    // company.hireEmployee(employee);
+     libraryb.hireBook(book);
     
 }
 function onChange(event) {
