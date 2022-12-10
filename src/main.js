@@ -4,13 +4,15 @@ const inputElements = document.querySelectorAll(".form-class [name]");
 const ACTIVE = "active";
 const MIN_PAGES = 50;
 const MAX_PAGES = 2000;
+const MIN_DATE = '1980-01-01';
+const MAX_DATE = 
 const TIME_OUT_ERROR_MESSAGE = 5000;
-const ERROR_CLASS = "active"
+const ERROR_CLASS = "error";
 
 const sectionsElement = document.querySelectorAll("section");
-const buttonsMenuElement = document.querySelectorAll(".buttons-menu");
+const buttonsMenuElement = document.querySelectorAll(".buttons-menu *");
 const numberOfPagesErrorElement = document.getElementById("numberOfPages_error");
-
+const publishingDateErrorElement = document.getElementById("publishingDate_error");
 function showSection(index) {
      buttonsMenuElement.forEach(e => e.classList.remove(ACTIVE));
     sectionsElement.forEach(e => e.hidden = true)
@@ -39,6 +41,9 @@ function onChange(event) {
     if (event.target.name == "numberOfPages") {
         validateNumberOfPages(event.target)
     }
+    else if (event.target.name == "publishingDate") {
+        validatePublishingDate(event.target)
+    }
 }
 function validateNumberOfPages(element) {
     const value = +element.value;
@@ -59,4 +64,5 @@ function showErrorMessage(element, message, errorElement) {
 
     
 }
+
 

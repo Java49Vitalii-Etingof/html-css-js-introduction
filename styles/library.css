@@ -33,6 +33,10 @@ body {
     border-color: red;
     color: red;
 }
+.active {
+    background-color:blue ;
+    color: white;
+}
 .buttons {
     display: flex;
     justify-content: space-around;
