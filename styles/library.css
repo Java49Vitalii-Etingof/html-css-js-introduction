@@ -50,3 +50,30 @@ body {
 .btn-menu+.btn-menu {
     margin-left: 10vw;
 }
+.books-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-height: 70vh;
+    list-style: none;
+    overflow-y: scroll;
+    justify-content: space-around;
+}
+.books-item {
+    max-width: 30vw;
+    background-color: blue;
+    border-radius: 25%;
+    text-align: center;
+    border: 2px solid blue;
+    margin-top: 10vh;
+    overflow: hidden;
+}
+.books-item-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.books-item-paragraph {
+    background-color: white;
+    font-weight: bold;
+}

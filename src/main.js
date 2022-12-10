@@ -1,6 +1,7 @@
 
 
 const inputElements = document.querySelectorAll(".form-class [name]");
+
 const ACTIVE = "active";
 const MIN_PAGES = 50;
 const MAX_PAGES = 2000;
@@ -8,33 +9,34 @@ const MIN_DATE = new Date('1980-01-01');
 const MAX_DATE = new Date();
 const TIME_OUT_ERROR_MESSAGE = 5000;
 const ERROR_CLASS = "error";
-
+const booksAuthorElement = document.getElementById("author-books");
 const sectionsElement = document.querySelectorAll("section");
 const buttonsMenuElement = document.querySelectorAll(".buttons-menu *");
 const numberOfPagesErrorElement = document.getElementById("numberOfPages_error");
 const publishingDateErrorElement = document.getElementById("publishingDate_error");
 const booksListElement = document.getElementById("books-all");
-
-const libraryb = new Libraryb();
-function Libraryb() {
+//*************************************************************************** */
+const library = new Library();
+function Library() {
     this.books = [];
 }
-Libraryb.prototype.hireBook = function(book) {
+Library.prototype.hireBook = function(book) {
     this.books.push(book);
 }
-Libraryb.prototype.getAllBooks = function(){
+Library.prototype.getAllBooks = function(){
     return this.books;
 }
 // Company.prototype.getEmployeesBySalary = function(salaryFrom, salaryTo) {
 //     //TODO
 // }
+//***************************************************************************** */
 function showSection(index) {
      buttonsMenuElement.forEach(e => e.classList.remove(ACTIVE));
     sectionsElement.forEach(e => e.hidden = true)
     buttonsMenuElement[index].classList.add(ACTIVE);
     sectionsElement[index].hidden = false;
      if (index == 1) {
-     const books = libraryb.getAllBooks();
+     const books = library.getAllBooks();
      booksListElement.innerHTML = getbookItems(books);
      }
 }
@@ -64,8 +66,14 @@ function onSubmit(event) {
         }, {}
     )
     console.log(book)
-     libraryb.hireBook(book);
-    
+     library.hireBook(book);   
+}
+let author = '';
+
+function onSubmitAuthor(event) {
+    event.preventDefault();
+    const books = library.getBooksAuthor(author);
+    BooksAuthorListElement.innerHTML = getBooksItems(books);
 }
 function onChange(event) {
     if (event.target.name == "numberOfPages") {
@@ -77,7 +85,7 @@ function onChange(event) {
 }
     function validatePublishingDate(element) {
         const value = new Date(element.value);
-        if (value < MAX_DATE || value > MAX_DATE) {
+        if (value < MIN_DATE || value > MAX_DATE) {
         const message = value < MIN_DATE ? `Publishing date must be ${MIN_DATE} or greater`:
         `Publishing date must be ${MAX_DATE} or less`;
         showErrorMessage(element, message, publishingDateErrorElement);    
