@@ -39,9 +39,9 @@
         
         <div class="date-label">
             <label>Enter publication date</label>
-            <input type="date" name="publishingDate" /*onchange="onChange(event)" */required>
+            <input type="date" name="publishingDate" onchange="onChange(event)" required>
         </div>
-        <p id="date_error" class="error"></p>
+        <p id="publishingDate_error" class="error"></p>
         
         <div class="buttons">
             <button type="submit">Submit</button>
@@ -49,6 +49,13 @@
         </div>
 
         </form>
+
+    </section>
+    <section id="show-all-books" hidden>
+        <ul class="books-list" id="books-all">
+
+            
+        </ul>
     </section>
     <script src="src/main.js"></script>
 </body>
