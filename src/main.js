@@ -9,7 +9,7 @@ const MIN_DATE = new Date('1980-01-01');
 const MAX_DATE = new Date();
 const TIME_OUT_ERROR_MESSAGE = 5000;
 const ERROR_CLASS = "error";
-const booksAuthorElement = document.getElementById("author-books");
+const booksAuthorListElement = document.getElementById("authorBooks");
 const sectionsElement = document.querySelectorAll("section");
 const buttonsMenuElement = document.querySelectorAll(".buttons-menu *");
 const numberOfPagesErrorElement = document.getElementById("numberOfPages_error");
@@ -26,9 +26,13 @@ Library.prototype.hireBook = function(book) {
 Library.prototype.getAllBooks = function(){
     return this.books;
 }
-// Company.prototype.getEmployeesBySalary = function(salaryFrom, salaryTo) {
-//     //TODO
-// }
+Library.prototype.getBooksAuthor = function(){
+    return this.books.filter(e => e.author == authorBooks);
+    
+ 
+  
+}
+
 //***************************************************************************** */
 function showSection(index) {
      buttonsMenuElement.forEach(e => e.classList.remove(ACTIVE));
@@ -37,10 +41,10 @@ function showSection(index) {
     sectionsElement[index].hidden = false;
      if (index == 1) {
      const books = library.getAllBooks();
-     booksListElement.innerHTML = getbookItems(books);
+     booksListElement.innerHTML = getBookItems(books);
      }
 }
-function getbookItems(books) {
+function getBookItems(books) {
     return books.map (e =>
         `<li class="books-item">
             <div class = "books-item-conteiner">
@@ -68,12 +72,12 @@ function onSubmit(event) {
     console.log(book)
      library.hireBook(book);   
 }
-let author = '';
+//const author = '';
 
 function onSubmitAuthor(event) {
     event.preventDefault();
-    const books = library.getBooksAuthor(author);
-    BooksAuthorListElement.innerHTML = getBooksItems(books);
+    const books = library.getBooksAuthor(authorBooks);
+    booksAuthorListElement.innerHTML = getBookItems(books);
 }
 function onChange(event) {
     if (event.target.name == "numberOfPages") {
