@@ -1,5 +1,5 @@
-import { Company } from "./data/company.js";
-import { EmployeeForm } from "./ui/employeeForm.js";
+import { Company } from "./data/library.js";
+import { EmployeeForm } from "./ui/bookForm.js";
 import { showErrorMessage } from "./ui/errorMessage.js";
 
 const MIN_SALARY = 1000;
