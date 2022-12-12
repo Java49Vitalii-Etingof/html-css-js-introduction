@@ -2,9 +2,9 @@ import { Company } from "./data/library.js";
 import { EmployeeForm } from "./ui/BookForm.js";
 import { showErrorMessage } from "./ui/errorMessage.js";
 
-const MIN_SALARY = 1000;
-const MAX_SALARY = 40000;
-const MIN_YEAR = 1950;
+const MIN_PAGE = 1000;
+const MAX_PAGE = 40000;
+const MIN_DATE = ;
 
 
 const ACTIVE = "active"
