@@ -1,15 +1,15 @@
-export class Company {
+export class Library {
     constructor() {
-        this.employees = [];
+        this.books = [];
     }
-    hireEmployee(employee) {
-        employee.salary = +employee.salary;
-        this.employees.push(employee);
+    hireBook(book) {
+        book.salary = +book.page;
+        this.books.push(book);
     }
-    getAllEmployees() {
-        return this.employees;
+    getAllBooks() {
+        return this.books;
     }
-    getEmployeesBySalary(salaryFrom, salaryTo) {
-        return this.employees.filter(e => e.salary >= salaryFrom && e.salary < salaryTo);
+    getBooksByPage(pageFrom, pageTo) {
+        return this.books.filter(e => e.page >= pageFrom && e.page < pageTo);
     }
 }
