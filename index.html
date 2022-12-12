@@ -1,76 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>library</title>
-    <link rel="stylesheet" href="styles/library.css">
+    <title>Form</title>
+    <link rel="stylesheet" href="styles/form.css">
 </head>
+
 <body>
     <div class="buttons-menu">
-        <button onclick="showSection(0)" class="btn-menu">Adding new book</button>
-        <button onclick="showSection(1)" class="btn-menu">Presenting all the books</button>
-        <button onclick="showSection(2)" class="btn-menu">Author's books</button>
-        <button onclick="showSection(3)" class="btn-menu">Books with number of pages in range</button>        
+        <button onclick="showSection(0)" class="btn-menu">Add Employee</button>
+        <button onclick="showSection(1)" class="btn-menu">Show All Employees</button>
+        <button onclick="showSection(2)" class="btn-menu">Show Employees by Salary</button>
     </div>
-    <section id="add-book" hidden>
-        <header class="form-title">Book Form</header>
-        <form id="book_form" onsubmit="onSubmit(event)" class="form-class">
-        <div class="two-inputs">
-            <input type="text" name="book_title" placeholder="Enter book title" required>
-            <input type="text" name="author" placeholder="Enter book author" required>
-        </div>
+    <section id="add-employee" hidden>
+        <header class="form-title">
+            Employee Form
+        </header>
+        <form id="employee_form"  class="form-class">
+            <div class="two-inputs">
+                <input type="text" name="employee_name" required placeholder="Enter employee name">
+                <input type="email" name="email" placeholder="Enter email" required>
+            </div>
+            <div class="date-label">
+                <label>Enter birthdate</label>
+                <input type="date" name="birthDate" required id="date_input">
 
-        <div class="two-inputs">
-            <select name="genre" required>
-                <option value hidden selected disabled>
-                    --Select Genre--
-                </option>
-                <option value="Fantasy">Fantasy</option>
-                <option value="Roman">Roman</option>
-                <option value="Detective">Detective</option>
-                <option value="Fairytale">Fairytale</option>
-                <option value="Adventure">Adventure</option>
-            </select>
-            <input type="number" name="numberOfPages" placeholder="Enter number of pages" onchange="onChange(event)" required>   
-        </div>
-        <p id="numberOfPages_error" class="error"></p>
-        
-        <div class="date-label">
-            <label>Enter publication date</label>
-            <input type="date" name="publishingDate" onchange="onChange(event)" required>
-        </div>
-        <p id="publishingDate_error" class="error"></p>
-        
-        <div class="buttons">
-            <button type="submit">Submit</button>
-            <button type="reset">Reset</button>
-        </div>
+            </div>
+            <p id="date_error" class="error"></p>
+            <div class="two-inputs">
+                <select name="department" required>
+                    <option value hidden selected disabled>
+                        --Select Department--
+                    </option>
+                    <option value="QA">QA</option>
+                    <option value="Development">Development</option>
+                    <option value="Management">Management</option>
+                    <option value="Audit">Audit</option>
+                </select>
+                <input type="number" name="salary" placeholder="Enter salary" id="salary_input" required>
+
+            </div>
+            <p id="salary_error" class="error"></p>
+            <div class="buttons">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+
+
 
         </form>
-
     </section>
-    <section id="show-all-books" hidden>
-        <ul class="books-list" id="books-all">
+    <section id="show-all-employees" hidden>
+        <ul class="employees-list" id="employees-all">
 
-            
         </ul>
     </section>
-<section id="author-books" hidden>
-    <form id="author" class="form-class">
-        <div class="input">
-            <input type="text" name="authorBooks" placeholder="Enter books author" required>
-        </div>
-        <div class="buttons">
-            <button type="submit">Submit</button>
-            <button type="reset">Reset</button>
-        </div>
-    </form>
-</section>
+    <section id="show-employees-salary" hidden>
+        <form id="salary-form" class="form-class" onsubmit="onSubmitSalary(event)">
+            <div class="two-inputs">
+                <input type="number" name="salaryFrom" placeholder="Enter salary 'From'" onchange="onChangeSalaryFrom(event)" required>
+                <input type="number" name="salaryTo" placeholder="Enter salary 'To'" onchange="onChangeSalaryTo(event)" required>
+            </div>
+            <div class="buttons">
+                <button type="submit">Search</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+        <p id="salary_form_error" class="error center"></p>
+        <ul class="employees-list" id="employees-salary">
 
-
-
-    <script src="src/main.js"></script>
+        </ul>
+    </section>
+    
+    <script src="src/main.js" type="module"></script>
 </body>
+
 </html>
