@@ -2,7 +2,7 @@ body, html {
     height: 100%;
 }
 body {
-    background-color: aliceblue;
+    background-color: azure;
 }
 .form-title {
     text-align: center;
@@ -42,7 +42,7 @@ body {
     color: red;
 }
 .active {
-    background-color: blue;
+   background-color: aqua;
     color: white;
 }
 .books-list {
@@ -56,10 +56,10 @@ body {
 }
 .books-item {
     max-width: 30vw;
-    background-color: blue;
+   background-color: bisque;
     border-radius: 25%;
     text-align: center;
-    border: 2px solid blue;
+    border: 2px solid black;
     margin-top: 10vh;
     overflow: hidden;
 }

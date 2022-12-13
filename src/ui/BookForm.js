@@ -49,8 +49,8 @@ export class BookForm {
    validatePage(element) {
         const value = +element.value;
         if (value < this.#minPage || value > this.#maxPage) {
-            const message = value < this.#minPage ? `page must be ${this.#minPage} or greater`
-                : `page must be ${this.#maxPage} or less`;
+            const message = value < this.#minPage ? `The number of pages should be ${this.#minPage} or greater`
+                : `The number of pages should be ${this.#maxPage} or less`;
             showErrorMessage(element, message, this.#pageErrorElement);
         }
     
@@ -58,8 +58,8 @@ export class BookForm {
     validatePublishingDate(element) {
         const value = new Date(element.value);
         if (value < this.#minDate || value > this.#maxDate) {
-            const message = value < this.#minDate ? `date must be ${this.#minDate} or greater`:
-                 `date must be ${this.#maxDate} or less`;
+            const message = value < this.#minDate ? `Publication date must be ${this.#minDate} or greater`:
+                 `Publication date must be ${this.#maxDate} or less`;
             showErrorMessage(element, message, this.#dateErrorElement) ;    
     
         }
