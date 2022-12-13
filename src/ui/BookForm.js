@@ -59,7 +59,7 @@ export class BookForm {
         const value = new Date(element.value);
         if (value < this.#minDate || value > this.#maxDate) {
             const message = value < this.#minDate ? `date must be ${this.#minDate} or greater`:
-                 `date must be ${this.#maxYear} or less`;
+                 `date must be ${this.#maxDate} or less`;
             showErrorMessage(element, message, this.#dateErrorElement) ;    
     
         }
@@ -70,16 +70,9 @@ export class BookForm {
 }
 
 
-function validatePublishingDate(element) {
-    const value = new Date(element.value);
-    if (value < MIN_DATE || value > MAX_DATE) {
-    const message = value < MIN_DATE ? `Publishing date must be ${MIN_DATE} or greater`:
-    `Publishing date must be ${MAX_DATE} or less`;
-    showErrorMessage(element, message, publishingDateErrorElement);    
-    }
-}
 
 
-function getMaxYear() {
-    return new Date().getFullYear();
+
+function getMaxDate() {
+    return new Date();
 }

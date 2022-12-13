@@ -1,8 +1,8 @@
 import { Library } from "./data/library.js";
-import { BookForm } from "./ui/BookForm.js";
+import { BookForm } from "./ui/bookForm.js";
 import { showErrorMessage } from "./ui/errorMessage.js";
 
-const MIN_PAGE = 500;
+const MIN_PAGE = 50;
 const MAX_PAGE = 2000;
 const MIN_DATE = new Date('1980-01-01')
 
@@ -18,11 +18,11 @@ const booksPageListElement = document.getElementById("books-page");
 const sectionsElement = document.querySelectorAll("section");
 const buttonsMenuElement = document.querySelectorAll(".buttons-menu *");
 /************************************************************************** */
-//functions of Company
+
 
 
 const library = new Library();
-//functions of Employee Form
+
 
 
 
@@ -30,18 +30,18 @@ const library = new Library();
 const bookForm = new BookForm({idForm: "book_form", idDateInput: "date_input",
 idPageInput: "page_input", idDateError: "date_error", idPageError: "page_error",
  minDate: MIN_DATE, minPage: MIN_PAGE, maxPage: MAX_PAGE})
- bookForm.addSubmitHandler((books) => library.hireBook(book))
+ bookForm.addSubmitHandler((book) => library.hireBook(book))
 /************************************************************* */
 
 /********************************************************************************** */
 
-//functions of Salary Form
+
 
 let pageFrom = 0;
 let pageTo = 0;
 function onSubmitPage(event) {
     event.preventDefault();
-    const books = company.getBooksByPage(pageFrom, pageTo);
+    const books = library.getBooksByPage(pageFrom, pageTo);
     booksPageListElement.innerHTML = getBookItems(books);
 
 
@@ -70,7 +70,7 @@ function showSection(index) {
     buttonsMenuElement[index].classList.add(ACTIVE);
     sectionsElement[index].hidden = false;
     if (index == 1) {
-        const books = company.getAllBooks();
+        const books = library.getAllBooks();
         booksListElement.innerHTML = getBookItems(books);
     }
 }
