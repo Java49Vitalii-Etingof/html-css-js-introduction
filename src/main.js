@@ -12,9 +12,10 @@ const ACTIVE = "active"
 
 
 
-const pageFormErrorElement = document.getElementById("salary_form_error");
+const pageFormErrorElement = document.getElementById("page_form_error");
 const booksListElement = document.getElementById("books-all");
 const booksPageListElement = document.getElementById("books-page");
+const booksAuthorListElement = document.getElementById("books-author");
 const sectionsElement = document.querySelectorAll("section");
 const buttonsMenuElement = document.querySelectorAll(".buttons-menu *");
 /************************************************************************** */
@@ -43,9 +44,7 @@ function onSubmitPage(event) {
     event.preventDefault();
     const books = library.getBooksByPage(pageFrom, pageTo);
     booksPageListElement.innerHTML = getBookItems(books);
-
-
-   
+  
 }
 function onChangePageFrom(event) {
     const value = +event.target.value;
@@ -64,6 +63,23 @@ function onChangePageTo(event) {
     }
     pageTo = value;
 }
+//********************************************************************************* */
+let authorBook = str;
+function onSubmitAuthor(event) {
+    event.preventDefault();
+    const books = library.getBooksByAuthor(authorBook);
+    booksAuthorListElement.innerHTML = getBookItems(books);
+  
+}
+
+
+
+
+
+
+
+
+//********************************************************************************* */
 function showSection(index) {
     buttonsMenuElement.forEach(e => e.classList.remove(ACTIVE));
     sectionsElement.forEach(e => e.hidden = true)
@@ -92,4 +108,5 @@ window.showSection = showSection;
 window.onChangePageTo = onChangePageTo;
 window.onChangePageFrom = onChangePageFrom;
 window.onSubmitPage = onSubmitPage;
+window.onSubmitAuthor = onSubmitAuthor;
 

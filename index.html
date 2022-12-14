@@ -14,6 +14,7 @@
         <button onclick="showSection(0)" class="btn-menu">Add Book</button>
         <button onclick="showSection(1)" class="btn-menu">Show All Books</button>
         <button onclick="showSection(2)" class="btn-menu">Show books in a page range</button>
+        <button onclick="showSection(3)" class="btn=menu">Show books by author</button>
     </div>
     <section id="add-book" hidden>
         <header class="form-title">
@@ -72,6 +73,22 @@
         </form>
         <p id="page_form_error" class="error center"></p>
         <ul class="books-list" id="books-page">
+
+        </ul>
+    </section>
+
+    <section id="show-books-author" hidden>
+        <form id="author-form" class="form-class" onsubmit="onSubmitAuthor(event)">
+            <div class="one-inputs">
+                <input type="text" name="authorBook" placeholder="Enter book author"  required>
+            </div>
+            <div class="buttons">
+                <button type="submit">Search</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+       
+        <ul class="books-list" id="books-author">
 
         </ul>
     </section>
