@@ -18,6 +18,7 @@ const booksPageListElement = document.getElementById("books-page");
 const booksAuthorListElement = document.getElementById("books-author");
 const sectionsElement = document.querySelectorAll("section");
 const buttonsMenuElement = document.querySelectorAll(".buttons-menu *");
+const authorFormInputElement = document.querySelectorAll(".author-form-class[name]")
 /************************************************************************** */
 
 
@@ -64,10 +65,12 @@ function onChangePageTo(event) {
     pageTo = value;
 }
 //********************************************************************************* */
-let authorBook = str;
+
+
 function onSubmitAuthor(event) {
     event.preventDefault();
-    const books = library.getBooksByAuthor(authorBook);
+    const author = Array.from(authorFormInputElement)[0].value;
+    const books = library.getBooksByAuthor(author);
     booksAuthorListElement.innerHTML = getBookItems(books);
   
 }
