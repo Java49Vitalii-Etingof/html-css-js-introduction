@@ -13,6 +13,6 @@ export class Library {
         return this.books.filter(e => e.page >= pageFrom && e.page < pageTo);
     }
     getBooksByAuthor(author) {
-        return this.books.filter(e => e.author == author);
+        return this.books.filter(e => e.author_name == author);
     }
 }

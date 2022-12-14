@@ -5,12 +5,7 @@ import { showErrorMessage } from "./ui/errorMessage.js";
 const MIN_PAGE = 50;
 const MAX_PAGE = 2000;
 const MIN_DATE = new Date('1980-01-01')
-
-
 const ACTIVE = "active"
-
-
-
 
 const pageFormErrorElement = document.getElementById("page_form_error");
 const booksListElement = document.getElementById("books-all");
@@ -18,26 +13,19 @@ const booksPageListElement = document.getElementById("books-page");
 const booksAuthorListElement = document.getElementById("books-author");
 const sectionsElement = document.querySelectorAll("section");
 const buttonsMenuElement = document.querySelectorAll(".buttons-menu *");
-const authorFormInputElement = document.querySelectorAll(".author-form-class[name]")
+const authorFormInputElement = document.getElementById("author");
 /************************************************************************** */
-
-
-
 const library = new Library();
 
-
-
-
-
-const bookForm = new BookForm({idForm: "book_form", idDateInput: "date_input",
-idPageInput: "page_input", idDateError: "date_error", idPageError: "page_error",
- minDate: MIN_DATE, minPage: MIN_PAGE, maxPage: MAX_PAGE})
- bookForm.addSubmitHandler((book) => library.hireBook(book))
+const bookForm = new BookForm({
+    idForm: "book_form", idDateInput: "date_input",
+    idPageInput: "page_input", idDateError: "date_error", idPageError: "page_error",
+    minDate: MIN_DATE, minPage: MIN_PAGE, maxPage: MAX_PAGE
+})
+bookForm.addSubmitHandler((book) => library.hireBook(book))
 /************************************************************* */
 
 /********************************************************************************** */
-
-
 
 let pageFrom = 0;
 let pageTo = 0;
@@ -45,13 +33,13 @@ function onSubmitPage(event) {
     event.preventDefault();
     const books = library.getBooksByPage(pageFrom, pageTo);
     booksPageListElement.innerHTML = getBookItems(books);
-  
+
 }
 function onChangePageFrom(event) {
     const value = +event.target.value;
     if (pageTo && value >= pageTo) {
         showErrorMessage(event.target, "Page 'from' must be less than Page 'to'",
-        pageFormErrorElement);
+            pageFormErrorElement);
     } else {
         pageFrom = value;
     }
@@ -60,7 +48,7 @@ function onChangePageTo(event) {
     const value = +event.target.value;
     if (pageFrom && value < pageFrom) {
         showErrorMessage(event.target, "Page 'To' must be greater than Page 'From'",
-        pageFormErrorElement);
+            pageFormErrorElement);
     }
     pageTo = value;
 }
@@ -69,18 +57,11 @@ function onChangePageTo(event) {
 
 function onSubmitAuthor(event) {
     event.preventDefault();
-    const author = Array.from(authorFormInputElement)[0].value;
-    const books = library.getBooksByAuthor(author);
+    const authorBook = authorFormInputElement.value
+    const books = library.getBooksByAuthor(authorBook);
     booksAuthorListElement.innerHTML = getBookItems(books);
-  
+
 }
-
-
-
-
-
-
-
 
 //********************************************************************************* */
 function showSection(index) {
@@ -94,7 +75,7 @@ function showSection(index) {
     }
 }
 function getBookItems(books) {
-    return books.map (e => 
+    return books.map(e =>
         `<li class="books-item">
               <div class="books-item-container">
                  <p class="books-item-paragraph">Name: ${e.book_name} </p>

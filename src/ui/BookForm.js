@@ -10,7 +10,7 @@ export class BookForm {
     #maxPage;
     #minDate;
     #maxDate;
-    constructor(params){
+    constructor(params) {
         this.#formElement = document.getElementById(params.idForm);
         this.#inputElements = document.querySelectorAll(`#${params.idForm} [name]`);
         this.#dateInputElement = document.getElementById(params.idDateInput);
@@ -44,28 +44,28 @@ export class BookForm {
         this.#pageInputElement.addEventListener("change", (event) => {
             this.validatePage(event.target);
         })
-       
+
     }
-   validatePage(element) {
+    validatePage(element) {
         const value = +element.value;
         if (value < this.#minPage || value > this.#maxPage) {
             const message = value < this.#minPage ? `The number of pages should be ${this.#minPage} or greater`
                 : `The number of pages should be ${this.#maxPage} or less`;
             showErrorMessage(element, message, this.#pageErrorElement);
         }
-    
+
     }
     validatePublishingDate(element) {
         const value = new Date(element.value);
         if (value < this.#minDate || value > this.#maxDate) {
-            const message = value < this.#minDate ? `Publication date must be ${this.#minDate} or greater`:
-                 `Publication date must be ${this.#maxDate} or less`;
-            showErrorMessage(element, message, this.#dateErrorElement) ;    
-    
+            const message = value < this.#minDate ? `Publication date must be ${this.#minDate} or greater` :
+                `Publication date must be ${this.#maxDate} or less`;
+            showErrorMessage(element, message, this.#dateErrorElement);
+
         }
-    
+
     }
-    
+
 
 }
 

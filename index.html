@@ -20,7 +20,7 @@
         <header class="form-title">
             Book Form
         </header>
-        <form id="book_form"  class="form-class">
+        <form id="book_form" class="form-class">
             <div class="two-inputs">
                 <input type="text" name="book_name" required placeholder="Enter book name">
                 <input type="text" name="author_name" placeholder="Enter author name" required>
@@ -63,8 +63,10 @@
     <section id="show-books-page" hidden>
         <form id="page-form" class="form-class" onsubmit="onSubmitPage(event)">
             <div class="two-inputs">
-                <input type="number" name="pageFrom" placeholder="Enter page 'From'" onchange="onChangePageFrom(event)" required>
-                <input type="number" name="pageTo" placeholder="Enter page 'To'" onchange="onChangePageTo(event)" required>
+                <input type="number" name="pageFrom" placeholder="Enter page 'From'" onchange="onChangePageFrom(event)"
+                    required>
+                <input type="number" name="pageTo" placeholder="Enter page 'To'" onchange="onChangePageTo(event)"
+                    required>
             </div>
             <div class="buttons">
                 <button type="submit">Search</button>
@@ -78,21 +80,21 @@
     </section>
 
     <section id="show-books-author" hidden>
-        <form id="author-form" class="author-form-class" onsubmit="onSubmitAuthor(event)">
+        <form id="author-form" class="form-class" onsubmit="onSubmitAuthor(event)">
             <div class="one-inputs">
-                <input type="text" name="author-name" placeholder="Enter book author"  required>
+                <input type="text" name="author-name" placeholder="Enter book author" id="author" required>
             </div>
             <div class="buttons">
                 <button type="submit">Search</button>
                 <button type="reset">Reset</button>
             </div>
         </form>
-       
+
         <ul class="books-list" id="books-author">
 
         </ul>
     </section>
-    
+
     <script src="src/main.js" type="module"></script>
 </body>
 
