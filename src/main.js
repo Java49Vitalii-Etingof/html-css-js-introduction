@@ -1,15 +1,17 @@
 import { Library } from "./data/library.js";
 import { AuthorForm } from "./ui/AuthorForm.js";
 import { BookForm } from "./ui/bookForm.js";
+import { BooksList } from "./ui/BooksList.js";
 import { PagesForm } from "./ui/PagesForm.js";
 
 const MIN_PAGE = 50;
 const MAX_PAGE = 2000;
 const MIN_DATE = new Date('1980-01-01')
 const ACTIVE = "active"
-const booksPageListElement = document. getElementById("books-page");
-const booksListElement = document.getElementById("books-all");
-const booksAuthorListElement = document.getElementById("books-author");
+
+const listAllBooks = new BooksList("books-all");
+const listBooksByPage = new BooksList("books-page");
+const listBooksByAuthor = new BooksList("books-author");
 const sectionsElement = document.querySelectorAll("section");
 const buttonsMenuElement = document.querySelectorAll(".buttons-menu *");
 
@@ -30,20 +32,21 @@ const paramsPages = {
 }
 const pagesForm = new PagesForm(paramsPages);
 pagesForm.addSubmitHandler((pagesObj) => {
-const books = library.getBooksByPage(pagesObj.pageFrom, pagesObj.pageTo);
-booksPageListElement.innerHTML = getBookItems(books);
+    const books = library.getBooksByPage(pagesObj.pageFrom, pagesObj.pageTo);
+    listBooksByPage.showBooks(books)
 
 })
 
 //********************************************************************************* */
-    const paramsAuthor = {
-        idForm: "author-form", idAuthorInput: "author"
-    }
-    const authorForm = new AuthorForm(paramsAuthor);
-    authorForm.addSubmitHandler((author) => {
-        const books = library.getBooksByAuthor(author);
-        booksAuthorListElement.innerHTML = getBookItems(books);   
-    })
+const paramsAuthor = {
+    idForm: "author-form", idAuthorInput: "author"
+}
+const authorForm = new AuthorForm(paramsAuthor);
+authorForm.addSubmitHandler((author) => {
+    const books = library.getBooksByAuthor(author);
+    listBooksByAuthor.showBooks(books)
+    //booksAuthorListElement.innerHTML = getBookItems(books);   
+})
 
 //********************************************************************************* */
 function showSection(index) {
@@ -53,25 +56,8 @@ function showSection(index) {
     sectionsElement[index].hidden = false;
     if (index == 1) {
         const books = library.getAllBooks();
-        booksListElement.innerHTML = getBookItems(books);
+        listAllBooks.showBooks(books);
     }
 }
-function getBookItems(books) {
-    return books.map(e =>
-        `<li class="books-item">
-              <div class="books-item-container">
-                 <p class="books-item-paragraph">Name: ${e.book_name} </p>
-                 <p class="books-item-paragraph">Author: ${e.author_name} </p>
-                 <p class="books-item-paragraph">Genre: ${e.genre}</p>
-                 <p class="books-item-paragraph">Publishing date: ${e.publishingDate}</p>
-                 <p class="books-item-paragraph">Pages: ${e.page}</p>
-              </div>
-          </li>`).join('');
-}
-
 
 window.showSection = showSection;
-
-
-
-

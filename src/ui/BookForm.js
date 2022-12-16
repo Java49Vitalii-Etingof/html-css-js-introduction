@@ -66,12 +66,7 @@ export class BookForm {
 
     }
 
-
 }
-
-
-
-
 
 function getMaxDate() {
     return new Date();
