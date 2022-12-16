@@ -1,4 +1,5 @@
 import { Library } from "./data/library.js";
+import { AuthorForm } from "./ui/AuthorForm.js";
 import { BookForm } from "./ui/bookForm.js";
 import { PagesForm } from "./ui/PagesForm.js";
 
@@ -11,7 +12,7 @@ const booksListElement = document.getElementById("books-all");
 const booksAuthorListElement = document.getElementById("books-author");
 const sectionsElement = document.querySelectorAll("section");
 const buttonsMenuElement = document.querySelectorAll(".buttons-menu *");
-const authorFormInputElement = document.getElementById("author");
+
 /************************************************************************** */
 const library = new Library();
 
@@ -21,7 +22,6 @@ const bookForm = new BookForm({
     minDate: MIN_DATE, minPage: MIN_PAGE, maxPage: MAX_PAGE
 })
 bookForm.addSubmitHandler((book) => library.hireBook(book))
-/************************************************************* */
 
 /********************************************************************************** */
 const paramsPages = {
@@ -35,18 +35,15 @@ booksPageListElement.innerHTML = getBookItems(books);
 
 })
 
-
-
 //********************************************************************************* */
-
-
-function onSubmitAuthor(event) {
-    event.preventDefault();
-    const authorBook = authorFormInputElement.value
-    const books = library.getBooksByAuthor(authorBook);
-    booksAuthorListElement.innerHTML = getBookItems(books);
-
-}
+    const paramsAuthor = {
+        idForm: "author-form", idAuthorInput: "author"
+    }
+    const authorForm = new AuthorForm(paramsAuthor);
+    authorForm.addSubmitHandler((author) => {
+        const books = library.getBooksByAuthor(author);
+        booksAuthorListElement.innerHTML = getBookItems(books);   
+    })
 
 //********************************************************************************* */
 function showSection(index) {
@@ -77,5 +74,4 @@ window.showSection = showSection;
 
 
 
-window.onSubmitAuthor = onSubmitAuthor;
 
