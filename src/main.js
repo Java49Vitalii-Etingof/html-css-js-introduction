@@ -1,15 +1,13 @@
 import { Library } from "./data/library.js";
 import { BookForm } from "./ui/bookForm.js";
-import { showErrorMessage } from "./ui/errorMessage.js";
+import { PagesForm } from "./ui/PagesForm.js";
 
 const MIN_PAGE = 50;
 const MAX_PAGE = 2000;
 const MIN_DATE = new Date('1980-01-01')
 const ACTIVE = "active"
-
-const pageFormErrorElement = document.getElementById("page_form_error");
+const booksPageListElement = document. getElementById("books-page");
 const booksListElement = document.getElementById("books-all");
-const booksPageListElement = document.getElementById("books-page");
 const booksAuthorListElement = document.getElementById("books-author");
 const sectionsElement = document.querySelectorAll("section");
 const buttonsMenuElement = document.querySelectorAll(".buttons-menu *");
@@ -26,32 +24,19 @@ bookForm.addSubmitHandler((book) => library.hireBook(book))
 /************************************************************* */
 
 /********************************************************************************** */
+const paramsPages = {
+    idForm: "page-form", idPageFromInput: "pageFrom",
+    idPageToInput: "pageTo", idErrorMessage: "page_form_error"
+}
+const pagesForm = new PagesForm(paramsPages);
+pagesForm.addSubmitHandler((pagesObj) => {
+const books = library.getBooksByPage(pagesObj.pageFrom, pagesObj.pageTo);
+booksPageListElement.innerHTML = getBookItems(books);
 
-let pageFrom = 0;
-let pageTo = 0;
-function onSubmitPage(event) {
-    event.preventDefault();
-    const books = library.getBooksByPage(pageFrom, pageTo);
-    booksPageListElement.innerHTML = getBookItems(books);
+})
 
-}
-function onChangePageFrom(event) {
-    const value = +event.target.value;
-    if (pageTo && value >= pageTo) {
-        showErrorMessage(event.target, "Page 'from' must be less than Page 'to'",
-            pageFormErrorElement);
-    } else {
-        pageFrom = value;
-    }
-}
-function onChangePageTo(event) {
-    const value = +event.target.value;
-    if (pageFrom && value < pageFrom) {
-        showErrorMessage(event.target, "Page 'To' must be greater than Page 'From'",
-            pageFormErrorElement);
-    }
-    pageTo = value;
-}
+
+
 //********************************************************************************* */
 
 
@@ -89,8 +74,8 @@ function getBookItems(books) {
 
 
 window.showSection = showSection;
-window.onChangePageTo = onChangePageTo;
-window.onChangePageFrom = onChangePageFrom;
-window.onSubmitPage = onSubmitPage;
+
+
+
 window.onSubmitAuthor = onSubmitAuthor;
 

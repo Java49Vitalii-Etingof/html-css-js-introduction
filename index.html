@@ -61,12 +61,10 @@
         </ul>
     </section>
     <section id="show-books-page" hidden>
-        <form id="page-form" class="form-class" onsubmit="onSubmitPage(event)">
+        <form id="page-form" class="form-class" >
             <div class="two-inputs">
-                <input type="number" name="pageFrom" placeholder="Enter page 'From'" onchange="onChangePageFrom(event)"
-                    required>
-                <input type="number" name="pageTo" placeholder="Enter page 'To'" onchange="onChangePageTo(event)"
-                    required>
+                <input type="number" id="pageFrom" name="pageFrom" placeholder="Enter page 'From'" required>
+                <input type="number" id="pageTo" name="pageTo" placeholder="Enter page 'To' " required>
             </div>
             <div class="buttons">
                 <button type="submit">Search</button>
