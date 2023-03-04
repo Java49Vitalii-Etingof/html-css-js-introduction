@@ -17,7 +17,7 @@ function ControlSum(NumberStr) {
             return value * 2;
         }
         else return (value * 2) % 10 + Math.trunc((value * 2) / 10)
-    })
+    }) 
 
     let ctrlSum = 0;
     ctrlSum = array.reduce(function (sum, cur) {
