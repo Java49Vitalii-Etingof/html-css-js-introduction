@@ -11,7 +11,7 @@ function ControlSum(NumberStr) {
     let array = Array.from(NumberStr).map(function (symbol, index) {
         let value = symbol.charCodeAt() - char0;
         if (index % 2 == 0) {
-            return value;
+            return value; 
         }
         else if (value * 2 < 10) {
             return value * 2;
