@@ -24,6 +24,7 @@ function ControlSum(NumberStr) {
         return sum + cur;
 
     }, 0)
+    
     return ctrlSum;
 }
 
